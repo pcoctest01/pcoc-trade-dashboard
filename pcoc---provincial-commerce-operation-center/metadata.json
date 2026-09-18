@@ -1,0 +1,6 @@
+{
+  "name": "ศูนย์ข้อมูลเศรษฐกิจการค้าจังหวัด (PCOC)",
+  "description": "ศูนย์ข้อมูลเศรษฐกิจการค้าจังหวัด (Provincial Commerce Operation Center: PCOC) แดชบอร์ดสารสนเทศและวิเคราะห์สถิติเศรษฐกิจการค้า การส่งออก-นำเข้า ดุลการค้า และโลจิสติกส์การค้า",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

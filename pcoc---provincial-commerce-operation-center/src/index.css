@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root,
+[data-theme="light"] {
+  --color-scheme: light;
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f1f5f9;
+  --surface: #ffffff;
+  --surface-elevated: #ffffff;
+  --surface-hover: #f8fafc;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --border: #e2e8f0;
+  --border-subtle: #f1f5f9;
+  --divider: #e2e8f0;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --success: #16a34a;
+  --danger: #dc2626;
+  --warning: #d97706;
+  --info: #0284c7;
+
+  /* Chart Tokens */
+  --chart-axis: #64748b;
+  --chart-grid: rgba(226, 232, 240, 0.8);
+  --chart-tooltip-bg: #ffffff;
+  --chart-tooltip-border: #e2e8f0;
+  --chart-tooltip-text: #0f172a;
+
+  /* UI Tokens */
+  --scrollbar-thumb: rgba(148, 163, 184, 0.35);
+  --scrollbar-thumb-hover: rgba(148, 163, 184, 0.6);
+  --focus-ring: rgba(37, 99, 235, 0.25);
+}
+
+.dark,
+[data-theme="dark"] {
+  --color-scheme: dark;
+  --bg-primary: #0b0f19;
+  --bg-secondary: #111827;
+  --bg-tertiary: #1e293b;
+  --surface: #111827;
+  --surface-elevated: #1e293b;
+  --surface-hover: #1e293b;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #64748b;
+  --border: #1e293b;
+  --border-subtle: #1e293b;
+  --divider: #1e293b;
+  --accent: #3b82f6;
+  --accent-hover: #60a5fa;
+  --success: #22c55e;
+  --danger: #f43f5e;
+  --warning: #f59e0b;
+  --info: #38bdf8;
+
+  /* Chart Tokens */
+  --chart-axis: #94a3b8;
+  --chart-grid: rgba(51, 65, 85, 0.35);
+  --chart-tooltip-bg: #0f172a;
+  --chart-tooltip-border: #334155;
+  --chart-tooltip-text: #f8fafc;
+
+  /* UI Tokens */
+  --scrollbar-thumb: rgba(100, 116, 139, 0.4);
+  --scrollbar-thumb-hover: rgba(148, 163, 184, 0.6);
+  --focus-ring: rgba(59, 130, 246, 0.35);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    color-scheme: var(--color-scheme, light);
+  }
+
+  body {
+    font-family: 'Sarabun', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+    letter-spacing: -0.01em;
+  }
+
+  /* Resilient Lucide / SVG icon rendering across all cards and containers */
+  svg.lucide,
+  .stat-card svg {
+    display: inline-block;
+    vertical-align: middle;
+    flex-shrink: 0;
+  }
+
+  /* Custom selection color */
+  ::selection {
+    background-color: rgba(59, 130, 246, 0.25);
+    color: inherit;
+  }
+}
+
+/* Apple-style smooth scrollbars */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* Subtle transitions and interaction feel */
+button, a, input, select {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Tabular figures for financial numbers */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Print Mode Styling */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm 12mm;
+  }
+  
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 10pt !important;
+  }
+  
+  .print\:hidden,
+  header,
+  footer,
+  button,
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-header {
+    display: block !important;
+  }
+  
+  .stat-card {
+    box-shadow: none !important;
+    border: 1px solid #cbd5e1 !important;
+    page-break-inside: avoid;
+  }
+  
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    font-size: 9pt !important;
+  }
+  
+  th, td {
+    padding: 6px 8px !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+  }
+  
+  tr {
+    page-break-inside: avoid;
+  }
+}

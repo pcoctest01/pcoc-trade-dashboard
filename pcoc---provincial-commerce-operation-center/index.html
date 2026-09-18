@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ศูนย์ข้อมูลเศรษฐกิจการค้าจังหวัด (PCOC) - Provincial Commerce Operation Center</title>
+    <meta name="description" content="ศูนย์ข้อมูลเศรษฐกิจการค้าจังหวัด (Provincial Commerce Operation Center: PCOC) แดชบอร์ดสารสนเทศและวิเคราะห์สถิติเศรษฐกิจการค้า การส่งออก-นำเข้า ดุลการค้า และโลจิสติกส์การค้า" />
+    <meta property="og:title" content="ศูนย์ข้อมูลเศรษฐกิจการค้าจังหวัด (PCOC) - Provincial Commerce Operation Center" />
+    <meta property="og:description" content="ศูนย์ข้อมูลเศรษฐกิจการค้าจังหวัด (Provincial Commerce Operation Center: PCOC) แดชบอร์ดสารสนเทศและวิเคราะห์สถิติเศรษฐกิจการค้า การส่งออก-นำเข้า ดุลการค้า และโลจิสติกส์การค้า" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <script>
+      (function() {
+        try {
+          var savedTheme = localStorage.getItem('ncr_theme');
+          var systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var isDark = savedTheme === 'dark' || (savedTheme === 'system' && systemDark) || (!savedTheme && false);
+          if (isDark) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.setAttribute('data-theme', 'dark');
+            document.documentElement.style.colorScheme = 'dark';
+          } else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.setAttribute('data-theme', 'light');
+            document.documentElement.style.colorScheme = 'light';
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="bg-slate-100/70 dark:bg-slate-950 text-slate-900 dark:text-slate-100 antialiased selection:bg-blue-600 selection:text-white min-h-screen transition-colors duration-200">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
