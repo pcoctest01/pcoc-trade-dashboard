@@ -3,7 +3,7 @@ import { formatPeriodName } from '../utils/calculations';
 import { INITIAL_BORDER_TRADE_DATA } from '../utils/initialData';
 
 export const DEFAULT_GAS_URL =
-  'https://script.google.com/macros/s/AKfycbzwUYa_EuFRTFf1DY41aO5GtNwWEWIKWDAlua8Sg3nHDzf88O6GmYZ10FRHVfyn7FS21g/exec';
+  'https://script.google.com/macros/s/AKfycbzE_5tW70aKOGCONvTXLadf1LVKRj0nAKLEsqaebIMYT4iVh069vVGa74Um7hjsUBn0ow/exec';
 
 export const getApiUrl = (): string => {
   if (typeof window !== 'undefined') {
